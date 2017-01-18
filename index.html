@@ -8,43 +8,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
     <script src="js/app.js"></script>
   </head>
-  <body>
-    <div class="container">
+
+  <body ng-app="App">
+    <div class="container" ng-controller="appCtrl">
       <h2 class="text-center">Simple Calc&trade;</h2>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4 my-calc">
           <div class="row">
-            <input type="text" class="form-control display center-block text-right" readonly>
+            <input type="text" class="form-control display center-block text-right" value="{{display}}" readonly>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default">7</button>
-            <button class="btn btn-default">8</button>
-            <button class="btn btn-default">9</button>
+            <button class="btn btn-default" ng-click="input(7)">7</button>
+            <button class="btn btn-default" ng-click="input(8)">8</button>
+            <button class="btn btn-default" ng-click="input(9)">9</button>
             <button class="btn btn-primary">&divide;</button>
             <button class="btn btn-primary">&times;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default">4</button>
-            <button class="btn btn-default">5</button>
-            <button class="btn btn-default">6</button>
-            <button class="btn btn-primary">&plus;</button>
+            <button class="btn btn-default" ng-click="input(4)">4</button>
+            <button class="btn btn-default" ng-click="input(5)">5</button>
+            <button class="btn btn-default" ng-click="input(6)">6</button>
+            <button class="btn btn-primary" ng-click="add()">&plus;</button>
             <button class="btn btn-primary">&minus;</button>
           </div>
           <div class="row text-center">
-            <button class="btn btn-default">1</button>
-            <button class="btn btn-default">2</button>
-            <button class="btn btn-default">3</button>
-            <button class="btn btn-success">&equals;</button>
-            <button class="btn btn-danger">c</button>
+            <button class="btn btn-default" ng-click="input(1)">1</button>
+            <button class="btn btn-default" ng-click="input(2)">2</button>
+            <button class="btn btn-default" ng-click="input(3)">3</button>
+            <button class="btn btn-success" ng-click="total()">&equals;</button>
+            <button class="btn btn-danger" ng-click="clear()">c</button>
           </div>
           <div class="row text-center">
             <button class="btn btn-default"></button>
-            <button class="btn btn-default">0</button>
+            <button class="btn btn-default" ng-click ="input(0)">0</button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
             <button class="btn btn-default"></button>
           </div>
         </div>
       </div>
+    </div>
   </body>
 </html>
